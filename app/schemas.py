@@ -12,5 +12,5 @@ class CarOut(BaseModel):
     model: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
