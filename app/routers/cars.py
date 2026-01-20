@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from datetime import date
 from ..database import SessionLocal
 from ..crud import get_available_cars
+from ..logging_conf import logger
 
 router = APIRouter(prefix="/cars", tags=["cars"])
 
@@ -15,4 +16,5 @@ def get_db():
 
 @router.get("/available")
 def available_cars(date: date, db: Session = Depends(get_db)):
+    logger.info(f"Query available cars for date {date}")
     return get_available_cars(db, date)

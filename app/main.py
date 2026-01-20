@@ -17,3 +17,8 @@ def startup():
 app.include_router(cars.router)
 app.include_router(bookings.router)
 
+@app.get("/")
+def health():
+    logger.info("Healthcheck requested")
+    return {"status": "ok"}
+
