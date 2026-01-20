@@ -13,10 +13,10 @@ Stack:
 - Pytest
 
 Run API:
-docker-compose -f docker-compose.yml up --build
+- docker-compose -f docker-compose.yml up --build
 
 Run Tests:
-docker-compose run --rm api pytest
+- docker-compose run --rm api pytest
 
 Swagger UI:
-http://localhost:8000/docs
+- http://localhost:8000/docs
